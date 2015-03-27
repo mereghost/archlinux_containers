@@ -60,6 +60,6 @@ mknod -m 600 $DEV/initctl p
 mknod -m 666 $DEV/ptmx c 5 2
 ln -sf /proc/self/fd $DEV/fd
 
-tar --numeric-owner -C $ROOTFS -c . | docker import - mereghost/archlinux
-docker run -i -t archlinux echo Success.
+tar --numeric-owner -C $ROOTFS -c . | docker import - mereghost/archlinux:latest
+docker run -i -t mereghost/archlinux echo Success.
 rm -rf $ROOTFS
